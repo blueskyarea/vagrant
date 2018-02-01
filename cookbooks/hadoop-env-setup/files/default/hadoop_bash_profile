@@ -1,0 +1,19 @@
+# .bash_profile
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+# Source hadoop definitions
+if [ -f /hadoop-tmp-work/usersAndGroups.conf ]; then
+  . /hadoop-tmp-work/usersAndGroups.conf
+fi
+if [ -f /hadoop-tmp-work/directories.conf ]; then
+  . /hadoop-tmp-work/directories.conf
+fi
+
+# Common Variables Definition
+JAVA_HOME="/usr/java/jdk1.8.0_161"
+PATH=${PATH}:${JAVA_HOME}/bin
+export JAVA_HOME
