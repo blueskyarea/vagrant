@@ -24,12 +24,11 @@ end
 
 # Set user
 user 'hdpuser' do
-  comment 'Hadoop Application User'
-  system true
-  supports :manage_home => true
-  home '/home/hdpuser'
   password 'ABc5nAEJ2KPIs'
+  home '/home/hdpuser'
+  supports :manage_home => true
   shell '/bin/bash'
+  comment 'Hadoop Application User'
 end
 
 directory '/home/hdpuser/.ssh' do
@@ -39,9 +38,27 @@ directory '/home/hdpuser/.ssh' do
   action :create
 end
 
+cookbook_file '/home/hdpuser/.ssh/id_rsa' do
+  source 'hdpuser_id_rsa'
+  owner 'hdpuser'
+  group 'hdpuser'
+  mode '0600'
+end
+
+cookbook_file '/home/hdpuser/.ssh/id_rsa.pub' do
+  source 'hdpuser_id_rsa.pub'
+  owner 'hdpuser'
+  group 'hdpuser'
+  mode '0644'
+end
+
 execute 'set_hdpuser_sudoer' do
   user 'root'
   command 'echo "hdpuser ALL=(ALL)ALL" >> /etc/sudoers'
   action :run  
 end
 
+# Installing wget command
+yum_package "wget" do
+  action :install
+end
