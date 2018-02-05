@@ -38,20 +38,6 @@ directory '/home/hdpuser/.ssh' do
   action :create
 end
 
-cookbook_file '/home/hdpuser/.ssh/id_rsa' do
-  source 'hdpuser_id_rsa'
-  owner 'hdpuser'
-  group 'hdpuser'
-  mode '0600'
-end
-
-cookbook_file '/home/hdpuser/.ssh/id_rsa.pub' do
-  source 'hdpuser_id_rsa.pub'
-  owner 'hdpuser'
-  group 'hdpuser'
-  mode '0644'
-end
-
 execute 'set_hdpuser_sudoer' do
   user 'root'
   command 'echo "hdpuser ALL=(ALL)ALL" >> /etc/sudoers'

@@ -1,0 +1,22 @@
+# @(#)This is configuration for main user.
+# @(#)Usage: Put in home directory of main user.
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+# Source hadoop definitions
+if [ -f /companion/usersAndGroups.sh ]; then
+  . /hadoop-setup/usersAndGroups.sh
+fi
+if [ -f /companion/directories.sh ]; then
+  . /hadoop-setup/directories.sh 
+fi
+
+# Common variables definitions
+JAVA_HOME="/usr/java/jdk1.8.0_161"
+export JAVA_HOME
+
+PATH=${PATH}:${JAVA_HOME}/bin
+
