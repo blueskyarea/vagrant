@@ -38,6 +38,13 @@ directory '/home/hdpuser/.ssh' do
   action :create
 end
 
+directory "/home/hdpuser/download" do
+  owner 'hdpuser'
+  group 'hdpuser'
+  mode '0755'
+  action :create
+end
+
 execute 'set_hdpuser_sudoer' do
   user 'root'
   command 'echo "hdpuser ALL=(ALL)ALL" >> /etc/sudoers'
