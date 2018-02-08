@@ -72,6 +72,7 @@ end
   slaves
   yarn-env.sh
   yarn-site.xml 
+  capacity-scheduler.xml
 ).each do |conf_file_name|
   cookbook_file "/hadoop_conf/#{conf_file_name}" do
     source "conf/#{conf_file_name}"
