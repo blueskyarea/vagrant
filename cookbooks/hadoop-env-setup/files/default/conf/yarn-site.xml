@@ -20,7 +20,7 @@
 <configuration>
   <property>
     <name>yarn.nodemanager.hostname</name>
-    <value>192.168.56.102</value>
+    <value>192.168.56.105</value>
   </property>
 
   <property>
@@ -65,25 +65,25 @@
 
   <property>
     <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>192.168.56.102:8025</value>
+    <value>192.168.56.105:8025</value>
     <description>Enter your ResourceManager hostname.</description>
   </property>
 
   <property>
     <name>yarn.resourcemanager.scheduler.address</name>
-    <value>192.168.56.102:8030</value>
+    <value>192.168.56.105:8030</value>
     <description>Enter your ResourceManager hostname.</description>
   </property>
 
   <property>
     <name>yarn.resourcemanager.address</name>
-    <value>192.168.56.102:8050</value>
+    <value>192.168.56.105:8050</value>
     <description>Enter your ResourceManager hostname.</description>
   </property>
 
   <property>
     <name>yarn.resourcemanager.admin.address</name>
-    <value>192.168.56.102:8141</value>
+    <value>192.168.56.105:8141</value>
     <description>Enter your ResourceManager hostname.</description>
   </property>
 
@@ -100,24 +100,24 @@
   <property>
     <description>List of directories to store localized files in.</description>
     <name>yarn.nodemanager.local-dirs</name>
-    <value>/grid/hadoop/yarn/local</value>
+    <value>/var/local/hadoop/cache/yarn/local</value>
   </property>
 
   <property>
     <description>Where to store container logs.</description>
     <name>yarn.nodemanager.log-dirs</name>
-    <value>/grid/hadoop/yarn/local/containers</value>
+    <value>/var/local/hadoop/cache/yarn/local/containers</value>
   </property>
 
   <property>
     <description>Where to aggregate logs to.</description>
     <name>yarn.nodemanager.remote-app-log-dir</name>
-    <value>/grid/hadoop/yarn/local/apps</value>
+    <value>/var/local/hadoop/cache/hadoop/yarn/local/apps</value>
   </property>
 
   <property>
     <name>yarn.log.server.url</name>
-    <value>http://192.168.56.102:19888/jobhistory/logs</value>
+    <value>http://192.168.56.105:19888/jobhistory/logs</value>
   </property>
   
   <!--property>
@@ -135,12 +135,12 @@
      <name>yarn.application.classpath</name>
      <value>
        $HADOOP_CONF_DIR,
-       /usr/hdp/2.2.4.2-2/hadoop-client/*,
-       /usr/hdp/2.2.4.2-2/hadoop-client/lib/*,
-       /usr/hdp/2.2.4.2-2/hadoop-hdfs-client/*,
-       /usr/hdp/2.2.4.2-2/hadoop-hdfs-client/lib/*,
-       /usr/hdp/2.2.4.2-2/hadoop-yarn-client/*,
-       /usr/hdp/2.2.4.2-2/hadoop-yarn-client/lib/*
+       /usr/hdp/2.6.2.0-205/hadoop/*,
+       /usr/hdp/2.6.2.0-205/hadoop/lib/*,
+       /usr/hdp/2.6.2.0-205/hadoop-hdfs/*,
+       /usr/hdp/2.6.2.0-205/hadoop-hdfs/lib/*,
+       /usr/hdp/2.6.2.0-205/hadoop-yarn/*,
+       /usr/hdp/2.6.2.0-205/hadoop-yarn/lib/*
      </value>
   </property>
 </configuration>

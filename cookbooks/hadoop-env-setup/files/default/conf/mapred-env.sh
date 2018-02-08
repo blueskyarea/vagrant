@@ -18,7 +18,7 @@
 export HADOOP_JOB_HISTORYSERVER_HEAPSIZE=512
 
 export HADOOP_MAPRED_ROOT_LOGGER=INFO,RFA
-export HADOOP_MAPRED_LOG_DIR="/var/log/hadoop"/${USER}
+export HADOOP_MAPRED_LOG_DIR="/var/log/hadoop-${USER}"
 
 #export HADOOP_JOB_HISTORYSERVER_OPTS=
 #export HADOOP_MAPRED_LOG_DIR="" # Where log files are stored.  $HADOOP_MAPRED_HOME/logs by default.

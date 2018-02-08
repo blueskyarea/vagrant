@@ -34,19 +34,19 @@
   </property>
   <property>
      <name>hadoop.tmp.dir</name>
-     <value>/grid/hadoop/hdfs</value>
+     <value>/var/local/hadoop/cache/hdfs</value>
   </property>
   <property>
      <name>dfs.namenode.name.dir</name>
-     <value>/grid/hadoop/hdfs/nn</value>
+     <value>/var/local/hadoop/cache/hdfs/nn</value>
   </property>
   <property>
      <name>dfs.namenode.checkpoint.dir</name>
-     <value>/grid/hadoop/hdfs/snn</value>
+     <value>/var/local/hadoop/cache/hdfs/snn</value>
   </property>
   <property>
      <name>dfs.datanode.data.dir</name>
-     <value>/grid/hadoop/hdfs/dn</value>
+     <value>/var/local/hadoop/cache/hdfs/dn</value>
    </property>
   <property>
      <name>dfs.webhdfs.enabled</name>

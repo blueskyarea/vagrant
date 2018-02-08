@@ -23,7 +23,7 @@
 
 # The java implementation to use.
 #export JAVA_HOME=${JAVA_HOME}
-export JAVA_HOME="/usr/java/jdk1.7.0_71"
+export JAVA_HOME="/usr/java/jdk1.8.0_161"
 
 # The jsvc implementation to use. Jsvc is required to run secure datanodes
 # that bind to privileged ports to provide authentication of data transfer
@@ -53,7 +53,7 @@ export JAVA_HOME="/usr/java/jdk1.7.0_71"
 #export HADOOP_NAMENODE_OPTS="-Dhadoop.security.logger=${HADOOP_SECURITY_LOGGER:-INFO,RFAS} -Dhdfs.audit.logger=${HDFS_AUDIT_LOGGER:-INFO,NullAppender} $HADOOP_NAMENODE_OPTS"
 #export HADOOP_DATANODE_OPTS="-Dhadoop.security.logger=ERROR,RFAS $HADOOP_DATANODE_OPTS"
 
-export HADOOP_NAMENODE_OPTS="-server -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC -XX:ErrorFile=/var/log/hadoop/$USER/hs_err_pid%p.log -XX:NewSize=64m -XX:MaxNewSize=64m -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -Xloggc:/var/log/hadoop/$USER/gc.log-`date +'%Y%m%d%H%M'` -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Dhadoop.security.logger=INFO,DRFAS -Dhdfs.audit.logger=INFO,DRFAAUDIT ${HADOOP_NAMENODE_OPTS}"
+export HADOOP_NAMENODE_OPTS="-server -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC -XX:ErrorFile=/var/log/hadoop-$USER/hs_err_pid%p.log -XX:NewSize=64m -XX:MaxNewSize=64m -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -Xloggc:/var/log/hadoop-$USER/gc.log-`date +'%Y%m%d%H%M'` -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Dhadoop.security.logger=INFO,DRFAS -Dhdfs.audit.logger=INFO,DRFAAUDIT ${HADOOP_NAMENODE_OPTS}"
 
 #export HADOOP_SECONDARYNAMENODE_OPTS="-Dhadoop.security.logger=${HADOOP_SECURITY_LOGGER:-INFO,RFAS} -Dhdfs.audit.logger=${HDFS_AUDIT_LOGGER:-INFO,NullAppender} $HADOOP_SECONDARYNAMENODE_OPTS"
 
@@ -72,7 +72,7 @@ export HADOOP_NAMENODE_OPTS="-server -XX:ParallelGCThreads=4 -XX:+UseConcMarkSwe
 #export HADOOP_SECURE_DN_USER=${HADOOP_SECURE_DN_USER}
 
 # Where log files are stored.  $HADOOP_HOME/logs by default.
-export HADOOP_LOG_DIR="/var/log/hadoop"/${USER}
+export HADOOP_LOG_DIR="/var/log/hadoop-${USER}"
 #export HADOOP_LOG_DIR=${HADOOP_LOG_DIR}/$USER
 
 # Where log files are stored in the secure data environment.

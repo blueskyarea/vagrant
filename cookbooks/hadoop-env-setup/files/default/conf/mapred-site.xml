@@ -20,7 +20,7 @@
 <configuration>
   <property>
     <name>mapred.job.tracker</name>
-    <value>192.168.56.102:8021</value>
+    <value>192.168.56.105:8021</value>
   </property>
 
   <property>
@@ -40,11 +40,11 @@
 
   <property>
     <name>mapreduce.jobhistory.address</name>
-    <value>192.168.56.102:10020</value>
+    <value>192.168.56.105:10020</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.webapp.address</name>
-    <value>192.168.56.102:19888</value>
+    <value>192.168.56.105:19888</value>
   </property>
 
   <property>
@@ -86,13 +86,15 @@
 
   <property>
     <name>mapreduce.admin.user.env</name> 
-    <value>LD_LIBRARY_PATH=/usr/hdp/2.2.4.2-2/hadoop/lib/native:/usr/hdp/2.2.4.2-2/hadoop/lib/native/Linux-amd64-64</value>
+    <value>LD_LIBRARY_PATH=/usr/hdp/2.6.2.0-205/hadoop/lib/native:/usr/hdp/2.6.2.0-205/hadoop/lib/native/Linux-amd64-64</value>
   </property>
 
+<!--
   <property>
     <name>mapreduce.application.framework.path</name>
     <value>/hdp/apps/2.2.4.2-2/mapreduce/mapreduce.tar.gz#mr-framework</value>
   </property>
+-->
 
   <property>
     <name>mapreduce.application.classpath</name>

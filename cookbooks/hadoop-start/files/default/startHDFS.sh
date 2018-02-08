@@ -3,16 +3,17 @@
 # @(#)Usage: startHDFS.sh
 
 USER=hdfs
-CLIENT_USER=hdpuser
 
-## remove old HDFS image
-rm -rf /grid/hadoop/hdfs/nn/current/
-rm -rf /grid/hadoop/hdfs/dn/current/
+## start HDFS
+count=`ps aux | grep namenode | grep -v grep | wc -l`
+if [ $count = 0 ]; then
+  /usr/hdp/current/hadoop-hdfs-namenode/../hadoop/sbin/hadoop-daemon.sh start namenode
+fi
 
-## initialize HDFS
-/usr/hdp/current/hadoop-hdfs-namenode/bin/hdfs --config /etc/hadoop/conf namenode -format
-/usr/hdp/current/hadoop-hdfs-namenode/../hadoop/sbin/hadoop-daemon.sh start namenode
-/usr/hdp/current/hadoop-hdfs-datanode/../hadoop/sbin/hadoop-daemon.sh start datanode
+count=`ps aux | grep datanode | grep -v grep | wc -l`
+if [ $count = 0 ]; then
+  /usr/hdp/current/hadoop-hdfs-datanode/../hadoop/sbin/hadoop-daemon.sh start datanode
+fi
 
 ## distribute mapreduce jar to HDFS beside application
 hdfs dfs -chown -R hdfs:hadoop /
